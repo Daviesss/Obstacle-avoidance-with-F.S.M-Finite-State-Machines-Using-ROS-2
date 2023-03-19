@@ -204,12 +204,14 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import LaserScan
+from nav_msgs.msg import Odometry
 
 class finite_state(Node):
     def __init__(self):
         super().__init__("finite_state")
         self.pub = self.create_publisher(Twist,'/cmd_vel',100)
         self.sub_laser = self.create_subscription(LaserScan,'/scan',self.callback_laser,100)
+        self.sub_odometry = self.create_subscription(Odometry,'/odom',self.call_back_odom,100)
         self.velocity_message = Twist()
         self.forward = 0.2
         self.stop = 0.0
@@ -242,6 +244,7 @@ class finite_state(Node):
                 self.velocity_message.angular.z = self.turn_right
                 self.pub.publish(self.velocity_message)
                 break
+                
 
 #main function.
 def main(args=None):
