@@ -3,3 +3,5 @@ This repository shows a robot which is able to avoid obstacles using a finite st
 
 
 # OBSTACLE AVOIDANCE USING F.S.M ROS 2.
+The robot is able to detect an object in front of it,using the finite state machine procedure.
+[Screencast from 03-19-2023 06:14:19 PM.webm](https://user-images.githubusercontent.com/97457075/226195951-c09fc38c-e9b9-4504-93a7-262247213e6f.webm)
