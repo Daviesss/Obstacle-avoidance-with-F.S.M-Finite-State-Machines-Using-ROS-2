@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
         'finite_state = obstacleavoidance_fsm.obstacle_avoidance:main',
+        'fsm= obstacleavoidance_fsm.fsm:main',
         ],
     },
 )
