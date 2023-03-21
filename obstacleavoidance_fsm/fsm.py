@@ -5,6 +5,7 @@ from rclpy.qos import qos_profile_sensor_data
 from rclpy.time import Time
 from geometry_msgs.msg import Twist 
 from sensor_msgs.msg import LaserScan
+from rclpy.duration import Duration
 
 #create a class that contains the main code.
 class finite_state(Node):
@@ -26,9 +27,14 @@ class finite_state(Node):
         self.state = self.forward #The state of the robot is equals to the robot driving forward.
 
         #The linear and angular velocity speed ot the robot.
-        self.liner_speed = 0.3 #robot drives forward.
+        self.linear_speed = 0.3 #robot drives forward.
         self.angular_speed = 0.3 #robot drives/turn right(z axis)
         self.distance_of_obstacle = 1.0 #distance of obstacle from the robot.
+
+
+        self.TURNING_TIME = 2.0
+        self.BACKING_TIME = 2.0
+        self.SCAN_TIMEOUT = 1.0
 
 
     def scan_callback(self,data):
@@ -42,13 +48,41 @@ class finite_state(Node):
         self.velocity_message = Twist()
         # self.pub.publish(self.velocity_message) #publish to the wheel of the robot.
         if self.state == self.forward:
-            self.velocity_message.linear.x = self.liner_speed
+            self.velocity_message.linear.x = self.linear_speed #robot drives forward.
+        
+        if self.check_if_forward_stop():
+            self.go_to_state(self.stop)
+        
+        if self.check_if_robot_forward_back():
+            self.go_to_state(self.backward)
+
+
+
+        self.pub.publish(self.velocity_message)
+
+
+    
+    def check_if_robot_forward_back(self):
+        pos = round(len(self.laser_scan.ranges)/2)
+        return self.laser_scan.ranges[pos] < self.distance_of_obstacle
+    
+    def check_if_forward_stop(self):
+        time_elapsed = self.get_clock().now() - Time.from_msg(self.laser_scan.header.stamp)
+        return time_elapsed > Duration(seconds=self.SCAN_TIMEOUT)
+    
+    def go_to_state(self,new_state):
+        self.state = new_state
+        self.state_time = self.get_clock().now()
+
+        
+
+
         
 
 def main(args=None):
     rclpy.init(args=args)
     store = finite_state()
-    store.velocity_movement()
+    #store.velocity_movement_cycle()
     rclpy.spin(store)
 
 
