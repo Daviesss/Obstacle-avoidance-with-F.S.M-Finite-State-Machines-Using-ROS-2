@@ -1,46 +1,59 @@
-#implementing finite state machine , obstacle avoidance(rclpy)
+#using finite state machine for object avoidance.
 import rclpy
 from rclpy.node import Node
-from rclpy.duration import Duration
-from rclpy.time import Time
 from rclpy.qos import qos_profile_sensor_data
-from geometry_msgs.msg import Twist
+from rclpy.time import Time
+from geometry_msgs.msg import Twist 
 from sensor_msgs.msg import LaserScan
 
-#create a class that stores all Node.
-class object_bump_and_go_node(Node):
+#create a class that contains the main code.
+class finite_state(Node):
     def __init__(self):
-        super().__init__('BumpandGo')
-        self.pub = self.create_publisher(Twist,'/cmd_vel',100)
-        self.sub_laser = self.create_subscription(LaserScan,'/scan',self.call_back_laser,10)
+        super().__init__('fsm')
+        self.pub = self.create_publisher(Twist,'/cmd_vel',10) #initilizing the publsiher.
+        self.sub_laser_scan = self.create_subscription(LaserScan,'/scan',self.scan_callback,10)
         self.velocity_message = Twist()
-        self.laser_scan = None
         self.time = 0.05
-        self.timer = self.create_timer(self.time,self.velocity_movement)
+        self.timer = self.create_timer(self.time,self.velocity_movement_cycle)
+        self.laser_scan = None
+        self.state_time = self.get_clock().now() #getting the clock time.
+
+        #initilize the direction the robot should go when it sees an obstacle.
+        self.forward = 0
+        self.backward = 1
+        self.turn = 1
+        self.stop = 3
+        self.state = self.forward #The state of the robot is equals to the robot driving forward.
+
+        #The linear and angular velocity speed ot the robot.
+        self.liner_speed = 0.3 #robot drives forward.
+        self.angular_speed = 0.3 #robot drives/turn right(z axis)
+        self.distance_of_obstacle = 1.0 #distance of obstacle from the robot.
 
 
-    #Subscribing to the laser_scan data.
-    def call_back_laser(self,data):
-        self.laser_scan = data
-    def velocity_movement(self):
-        if self.laser_scan ==  None:
-            return 
+    def scan_callback(self,data):
+        self.laser_scan == data
+          
+    
+    def velocity_movement_cycle(self):
+        if self.laser_scan == None:
+            return  #return nothing(execute nothing)
         
-        self.velocity_message = Twist() #storing the twist message into a variable
-        self.pub.publish(self.velocity_message)
+        self.velocity_message = Twist()
+        # self.pub.publish(self.velocity_message) #publish to the wheel of the robot.
+        if self.state == self.forward:
+            self.velocity_message.linear.x = self.liner_speed
+        
 
-#The main function.
 def main(args=None):
     rclpy.init(args=args)
-    store = object_bump_and_go_node()
+    store = finite_state()
+    store.velocity_movement()
     rclpy.spin(store)
-    #rclpy.shutdown()
-
 
 
 if __name__ == '__main__':
     main()
-
 
     
 
