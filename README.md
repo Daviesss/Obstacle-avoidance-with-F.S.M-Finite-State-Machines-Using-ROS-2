@@ -14,4 +14,7 @@ The robot is able to detect an object in front of it,using the finite state mach
 NOTE: THE .cpp Node in the package is a ros1 node,that does the same task.
 
 [avoid.webm](https://user-images.githubusercontent.com/97457075/226737749-47f27146-1c86-4cce-8efc-7ec714f71df7.webm)
+
+
+
 [avoid5.webm](https://user-images.githubusercontent.com/97457075/226737826-bb44243f-713a-4288-97c9-016a33cd61ca.webm)
