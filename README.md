@@ -13,6 +13,7 @@ The robot is able to detect an object in front of it,using the finite state mach
 
 NOTE: THE .cpp Node in the package is a ros1 node,that does the same task.
 
+TASK: The robot turns exactly to the angle with no obstacles or the left and right.Instead of the robot always turning to the same side,it turns to the right or the left with no obstacle.
 [avoid.webm](https://user-images.githubusercontent.com/97457075/226737749-47f27146-1c86-4cce-8efc-7ec714f71df7.webm)
 
 
