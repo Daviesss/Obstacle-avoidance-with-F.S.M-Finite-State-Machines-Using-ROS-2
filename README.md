@@ -26,3 +26,4 @@ TASK: The robot turns exactly to the angle with no obstacles or the left and rig
 ```
   ros2 run obstacleavoidance_fsm transform_object_detector
 ```
+[Screencast from 04-09-2023 01:35:57 AM.webm](https://user-images.githubusercontent.com/97457075/230748322-f0a72433-0f08-4992-803e-72236b07fe29.webm)
