@@ -23,7 +23,7 @@ class Avoid_obstacle(Node):
     def laser_callback(self,scan_msg):
         self.get_logger().info('Reading laser scan messages:"%s"' %scan_msg.ranges)
         #Look up at the tranform from base_link to laser_frame of the robot
-        transform = self.tf2_buffer.lookup_transform("base_link","laser_frame",rclpy.time.Time())
+        # transform = self.tf2_buffer.lookup_transform("base_link","laser_frame",rclpy.time.Time())
         
         #converting the laser readings with a numpy array.
         self.ranges = np.array(scan_msg.ranges)
@@ -39,8 +39,9 @@ class Avoid_obstacle(Node):
         #We check if there is an obstacle in front of the robot at 1m 
         if np.min(transform_ranges) < 1:
             self.velocity_message.linear.x = 0.0
-            self.velocity_message.angular.z = -pi/2.0
-        
+            self.velocity_message.angular.z = 0.2
+            self.get_logger().info('Robot turns at velocity speed of:'+str(0.2))
+           
         else:
             self.velocity_message.linear.x = 0.2
             self.velocity_message.angular.z = 0.0
