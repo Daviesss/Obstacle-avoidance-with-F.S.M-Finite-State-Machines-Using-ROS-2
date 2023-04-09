@@ -26,7 +26,7 @@ setup(
         'move_sub=obstacleavoidance_fsm.move_sub:main',
         'avoidance=obstacleavoidance_fsm.avoidance:main',
         'distance=obstacleavoidance_fsm.obstacle_avoidance:main',
-        'transform_object_detctor=obstacleavoidance_fsm.obstacle_detector_using_tf2:main',
+        'transform_object_detector=obstacleavoidance_fsm.obstacle_detector_using_tf2:main',
         ],
     },  
 )
