@@ -21,3 +21,8 @@ TASK: The robot turns exactly to the angle with no obstacles or the left and rig
 
 
 [avoid5.webm](https://user-images.githubusercontent.com/97457075/226737826-bb44243f-713a-4288-97c9-016a33cd61ca.webm)
+
+# USING TF2 Link from parent_frame to child_frame in avoiding an obstacle:
+```
+  ros2 run obstacleavoidance_fsm transform_object_detector
+```
