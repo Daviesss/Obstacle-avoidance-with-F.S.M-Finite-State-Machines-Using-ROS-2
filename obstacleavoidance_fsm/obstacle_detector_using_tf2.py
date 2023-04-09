@@ -7,6 +7,7 @@ import tf2_ros
 from tf2_ros import TransformListener #listens to the tf2 topic.
 import numpy as np 
 from math import pi 
+import time
 
 class Avoid_obstacle(Node):
     def __init__(self):
@@ -17,13 +18,15 @@ class Avoid_obstacle(Node):
         self.transform_stamped = TransformStamped()
         self.tf2_buffer = tf2_ros.Buffer()
         self.tf2_listener = tf2_ros.TransformListener(self.tf2_buffer,self) # Transform listener
+        self.time = time.time()
         self.rate = self.create_rate(10) #Hz 
         self.get_logger().info('The Node is about to start reading....')
+        
 
     def laser_callback(self,scan_msg):
         self.get_logger().info('Reading laser scan messages:"%s"' %scan_msg.ranges)
         #Look up at the tranform from base_link to laser_frame of the robot
-        # transform = self.tf2_buffer.lookup_transform("base_link","laser_frame",rclpy.time.Time())
+        #transform = self.tf2_buffer.lookup_transform("base_link","laser_frame",rclpy.self.time)
         
         #converting the laser readings with a numpy array.
         self.ranges = np.array(scan_msg.ranges)
