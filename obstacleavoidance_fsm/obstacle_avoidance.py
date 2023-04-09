@@ -206,12 +206,12 @@ from geometry_msgs.msg import Twist
 from sensor_msgs.msg import LaserScan
 from nav_msgs.msg import Odometry
 
-class finite_state(Node):
+class obstacle(Node):
     def __init__(self):
         super().__init__("finite_state")
         self.pub = self.create_publisher(Twist,'/cmd_vel',100)
         self.sub_laser = self.create_subscription(LaserScan,'/scan',self.callback_laser,100)
-        self.sub_odometry = self.create_subscription(Odometry,'/odom',self.call_back_odom,100)
+        #self.sub_odometry = self.create_subscription(Odometry,'/odom',self.call_back_odom,100)
         self.velocity_message = Twist()
         self.forward = 0.2
         self.stop = 0.0
@@ -231,25 +231,44 @@ class finite_state(Node):
         self.velocity_message.linear.x = self.forward
         self.pub.publish(self.velocity_message)
         #check if there is an obstacle at the front of the robot,then sending stop to the robot.
-        
         for x in msg.ranges:
             if msg.ranges[100] < 1.88:
                 self.velocity_message.linear.x = self.stop
                 self.pub.publish(self.velocity_message)
-            else:
-                self.velocity_message.linear.x = self.forward
+
+            if msg.ranges[100] == 'inf':
+                self.velocity_message.linear.x = self.turn_right
                 self.pub.publish(self.velocity_message)
 
             while msg.ranges[100] < 1.88:
                 self.velocity_message.angular.z = self.turn_right
                 self.pub.publish(self.velocity_message)
                 break
-                
+
+            
+    #turn left 
+    def turn_left(self):
+        self.velocity_message.angular.z = -(self.turn_lefft)
+        self.pub.publish(self.velocity_message)
+        print("The robot is turning left")
+    
+    #speed incresed while the robot turn right
+    def increased_speed_right(self):
+        self.velocity_message.angular = self.turn_right + 0.2 
+        self.pub.publish(self.velocity_message)
+        print("The robot turns right with an incresed speed of " + str(0.2))
+
+    #stop the robot.
+    def stopp(self):
+        self.velocity_message.linear.x = self.stop
+        self.pub.publish(self.velocity_message)
+        print("The robot has stopped")
+            
 
 #main function.
 def main(args=None):
     rclpy.init(args=args)
-    store = finite_state()
+    store = obstacle()
     #store.movement()
     rclpy.spin(store)
 

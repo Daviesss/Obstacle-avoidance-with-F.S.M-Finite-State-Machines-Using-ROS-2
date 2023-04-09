@@ -22,6 +22,11 @@ setup(
         'console_scripts': [
         'finite_state = obstacleavoidance_fsm.obstacle_avoidance:main',
         'fsm= obstacleavoidance_fsm.fsm:main',
+        'move=obstacleavoidance_fsm.obstacle:main',
+        'move_sub=obstacleavoidance_fsm.move_sub:main',
+        'avoidance=obstacleavoidance_fsm.avoidance:main',
+        'distance=obstacleavoidance_fsm.obstacle_avoidance:main',
+        'transform_object_detctor=obstacleavoidance_fsm.obstacle_detector_using_tf2:main',
         ],
-    },
+    },  
 )

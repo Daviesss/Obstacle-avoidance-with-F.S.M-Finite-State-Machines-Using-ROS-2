@@ -82,7 +82,7 @@ class finite_state(Node):
 def main(args=None):
     rclpy.init(args=args)
     store = finite_state()
-    #store.velocity_movement_cycle()
+    store.velocity_movement()
     rclpy.spin(store)
 
 
