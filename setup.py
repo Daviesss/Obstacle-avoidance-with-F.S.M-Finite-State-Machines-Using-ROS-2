@@ -27,6 +27,8 @@ setup(
         'avoidance=obstacleavoidance_fsm.avoidance:main',
         'distance=obstacleavoidance_fsm.obstacle_avoidance:main',
         'transform_object_detector=obstacleavoidance_fsm.obstacle_detector_using_tf2:main',
+        'marker_detection=obstacleavoidance_fsm.marker_detection:main',
+        'tf_laser_obstacle_avoidance=obstacleavoidance_fsm.tf2_laser_obstacle_avoidance:main',
         ],
     },  
 )

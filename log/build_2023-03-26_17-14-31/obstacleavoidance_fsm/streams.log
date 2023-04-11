@@ -1,0 +1,49 @@
+[1.146s] Invoking command in '/home/magnum/simuate_ws/src/obstacleavoidance_fsm': PYTHONPATH=/home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/prefix_override:/home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/obstacleavoidance_fsm build --build-base /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build install --record /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/install.log --install-scripts $base/lib/obstacleavoidance_fsm --single-version-externally-managed
+[1.542s] running egg_info
+[1.543s] creating build/obstacleavoidance_fsm/obstacleavoidance_fsm.egg-info
+[1.543s] writing build/obstacleavoidance_fsm/obstacleavoidance_fsm.egg-info/PKG-INFO
+[1.543s] writing dependency_links to build/obstacleavoidance_fsm/obstacleavoidance_fsm.egg-info/dependency_links.txt
+[1.544s] writing entry points to build/obstacleavoidance_fsm/obstacleavoidance_fsm.egg-info/entry_points.txt
+[1.544s] writing requirements to build/obstacleavoidance_fsm/obstacleavoidance_fsm.egg-info/requires.txt
+[1.544s] writing top-level names to build/obstacleavoidance_fsm/obstacleavoidance_fsm.egg-info/top_level.txt
+[1.546s] writing manifest file 'build/obstacleavoidance_fsm/obstacleavoidance_fsm.egg-info/SOURCES.txt'
+[1.591s] reading manifest file 'build/obstacleavoidance_fsm/obstacleavoidance_fsm.egg-info/SOURCES.txt'
+[1.592s] writing manifest file 'build/obstacleavoidance_fsm/obstacleavoidance_fsm.egg-info/SOURCES.txt'
+[1.592s] running build
+[1.593s] running build_py
+[1.593s] creating /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build
+[1.593s] creating /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib
+[1.593s] creating /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm
+[1.593s] copying obstacleavoidance_fsm/obstacle_avoidance.py -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm
+[1.593s] copying obstacleavoidance_fsm/fsm.py -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm
+[1.594s] copying obstacleavoidance_fsm/obstacle.py -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm
+[1.594s] copying obstacleavoidance_fsm/__init__.py -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm
+[1.594s] copying obstacleavoidance_fsm/move_sub.py -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm
+[1.594s] running install
+[1.596s] running install_lib
+[1.597s] creating /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm
+[1.597s] copying /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm/obstacle_avoidance.py -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm
+[1.597s] copying /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm/fsm.py -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm
+[1.597s] copying /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm/obstacle.py -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm
+[1.597s] copying /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm/__init__.py -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm
+[1.597s] copying /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build/lib/obstacleavoidance_fsm/move_sub.py -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm
+[1.598s] byte-compiling /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm/obstacle_avoidance.py to obstacle_avoidance.cpython-38.pyc
+[1.600s] byte-compiling /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm/fsm.py to fsm.cpython-38.pyc
+[1.600s] byte-compiling /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm/obstacle.py to obstacle.cpython-38.pyc
+[1.601s] byte-compiling /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm/__init__.py to __init__.cpython-38.pyc
+[1.601s] byte-compiling /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm/move_sub.py to move_sub.cpython-38.pyc
+[1.601s] running install_data
+[1.602s] creating /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/share/ament_index
+[1.602s] creating /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/share/ament_index/resource_index
+[1.602s] creating /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/share/ament_index/resource_index/packages
+[1.602s] copying resource/obstacleavoidance_fsm -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/share/ament_index/resource_index/packages
+[1.602s] copying package.xml -> /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/share/obstacleavoidance_fsm
+[1.603s] running install_egg_info
+[1.605s] Copying build/obstacleavoidance_fsm/obstacleavoidance_fsm.egg-info to /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages/obstacleavoidance_fsm-0.0.0-py3.8.egg-info
+[1.605s] running install_scripts
+[1.632s] Installing finite_state script to /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/obstacleavoidance_fsm
+[1.632s] Installing fsm script to /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/obstacleavoidance_fsm
+[1.632s] Installing move script to /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/obstacleavoidance_fsm
+[1.632s] Installing move_sub script to /home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/obstacleavoidance_fsm
+[1.633s] writing list of installed files to '/home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/install.log'
+[1.691s] Invoked command in '/home/magnum/simuate_ws/src/obstacleavoidance_fsm' returned '0': PYTHONPATH=/home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/prefix_override:/home/magnum/simuate_ws/src/obstacleavoidance_fsm/install/obstacleavoidance_fsm/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/obstacleavoidance_fsm build --build-base /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/build install --record /home/magnum/simuate_ws/src/obstacleavoidance_fsm/build/obstacleavoidance_fsm/install.log --install-scripts $base/lib/obstacleavoidance_fsm --single-version-externally-managed

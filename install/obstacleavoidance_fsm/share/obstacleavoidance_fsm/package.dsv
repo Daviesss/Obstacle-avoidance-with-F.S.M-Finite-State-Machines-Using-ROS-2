@@ -1,0 +1,6 @@
+source;share/obstacleavoidance_fsm/hook/pythonpath.ps1
+source;share/obstacleavoidance_fsm/hook/pythonpath.dsv
+source;share/obstacleavoidance_fsm/hook/pythonpath.sh
+source;share/obstacleavoidance_fsm/hook/ament_prefix_path.ps1
+source;share/obstacleavoidance_fsm/hook/ament_prefix_path.dsv
+source;share/obstacleavoidance_fsm/hook/ament_prefix_path.sh

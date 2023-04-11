@@ -23,7 +23,7 @@ class Avoid_obstacle(Node):
         self.tf2_listener = tf2_ros.TransformListener(self.tf2_buffer,self) # Transform listener
         self.time = time.time()
         self.rate = self.create_rate(10) #Hz 
-        self.get_logger().info('The Node is about to start reading....')
+        self.get_logger().info('The Node is reading.....')
         
 
 
