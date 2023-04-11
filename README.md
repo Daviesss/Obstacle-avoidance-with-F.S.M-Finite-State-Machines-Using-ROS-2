@@ -27,3 +27,20 @@ TASK: The robot turns exactly to the angle with no obstacles or the left and rig
   ros2 run obstacleavoidance_fsm transform_object_detector
 ```
 [Screencast from 04-09-2023 01:35:57 AM.webm](https://user-images.githubusercontent.com/97457075/230748322-f0a72433-0f08-4992-803e-72236b07fe29.webm)
+
+# USING RVIZ 2 VISUAL MARKER.
+  You can publish numerous markers simultaneously by using the visualization_msgs/MarkerArray message, which is also available. The visualization_marker_array topic is where you want to post in this situation.To install the package.
+ 
+ ```
+   sudo apt-get install ros-<ros_distro>-rviz-visual-tools 
+ ```
+ Run the Node:
+ ```
+   ros2 run obstacleavoidance_fsm marker_detection 
+ ```
+ 
+  
+
+https://user-images.githubusercontent.com/97457075/231242907-72554731-65c4-40b1-b64e-4d89dad36690.mp4
+
+
